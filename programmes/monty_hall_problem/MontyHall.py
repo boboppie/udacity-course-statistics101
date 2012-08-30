@@ -14,7 +14,7 @@
 # your chance of winning the car? 
 #
 # Simulation 
-# Write a function simulate() that runs 1000 iterations of a simulation of the Monty Hall 
+# Write a function simulate() that runs 100000 iterations of a simulation of the Monty Hall 
 # problem and so empirically verify the probabilities that we have just calculated.  
 # The function should count how many times you win the car in a variable, K, and then 
 # return K divided by the number of iterations, N. 
@@ -27,7 +27,7 @@
 #
 # You will also have to simulate the actions of Monty Hall. Sometimes these actions 
 # will be deterministic, at other times they will be stochastic (random). Recall that we 
-# saw both types of action when we constructed the truth-table.  
+# saw both types of action when we constructed the truth-table (read note of Unit6).  
 #
 # Once the “Monty-simulator” has picked a door, flip your choice to the remaining door. 
 # If that matches the true location then you should increment K, otherwise not. 
@@ -36,7 +36,7 @@
 
 from random import randint
 
-N = 1000
+N = 100000
 
 def simulate(N):
     K = 0
