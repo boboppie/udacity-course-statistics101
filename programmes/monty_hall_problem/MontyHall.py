@@ -39,8 +39,19 @@ from random import randint
 N = 100000
 
 def simulate(N):
-    K = 0
-    ###insert your code here###
+    K = 0 # the times you win the car
+    truth = randint(1,3) # true location contains the car
+    for i in range(N):
+        guess1 = randint(1,3) # initial guess; independent random choices with equal probability
+        if truth == guess1:
+            monty = randint(1,3) # let monty pick a door
+            while monty == truth: # monty might pick the true door
+                monty = randint(1,3) # find a door that not the true door
+        else:
+            monty = 6 - truth - guess1 # trick: three door numbers sum to 6, monty chooses the door not the true one nor my guess
+        guess2 = 6 - guess1 - monty # then I swith to the door not my init guess not monty's choice
+        if guess2 == truth:
+            K = K + 1
     return float(K) / float(N)
 
 print simulate(N)
